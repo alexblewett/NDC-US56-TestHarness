@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% import "helpers/forms.html" as forms %}
+{% block title %}JSON Data Submit Prototype{% endblock %}
+{% block content %}
+{{ super() }}
+
+<form action="/submit" method="POST">
+<fieldset>
+<legend>Submit a Request</legend>
+{{ forms.render(submit_form) }}
+<p><input type="Submit" value="Send"></p>
+</fieldset>
+</form>
+
+<form action="/retrieve" method="POST">
+<fieldset>
+<legend>Retrieve a Request</legend>
+{{ forms.render(receive_form) }}
+<p><input type="Submit" value="Send"></p>
+</fieldset>
+</form>
+{% endblock content %}
